@@ -19,7 +19,9 @@ if st.button("Predict Electric Bill"):
     st.error("❌ AC Units must not be greater than 150.") 
   else:
    new_data = pd.DataFrame({ 
-     "AC_Units": [ac_units] }) 
+     "AC_Units": [ac_units] })
+      new_data_poly = poly.transform(new_data)
+      
    predicted_bill = model.predict(new_data) 
    st.success( 
    f"Predicted Electric Bill: ₹{predicted_bill[0]:.2f}" )
