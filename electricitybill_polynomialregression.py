@@ -13,14 +13,25 @@ ac_units = st.number_input(
     value=50.0,
     step=1.0
 )
+fan_units=st.number_input(
+    "Fan(Units)",
+    value=45.0,
+    step=1.0
+)
 if st.button("Predict Electric Bill"): 
   if ac_units < 10:
     st.error("❌ AC Units must be 10 or above.")
   elif ac_units > 150:
-    st.error("❌ AC Units must not be greater than 150.") 
+    st.error("❌ AC Units must not be greater than 150.")
+  elif fan_units <20:
+      st.error("❌ Fan Units must be 20 or above.")
+  elif fan_units >120:
+      st.error("❌ Fan Units must not be greater than 120.)
   else:
    new_data = pd.DataFrame({ 
-     "AC_Units": [ac_units] })
+     "AC_Units": [ac_units],
+     "Fan_Units":[fan_units]
+    })
    new_data_poly = poly.transform(new_data)
       
    predicted_bill = model.predict(new_data_poly) 
