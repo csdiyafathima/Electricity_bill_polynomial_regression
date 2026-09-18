@@ -23,6 +23,6 @@ if st.button("Predict Electric Bill"):
      "AC_Units": [ac_units] })
    new_data_poly = poly.transform(new_data)
       
-   predicted_bill = model.predict(new_data) 
+   predicted_bill = model.predict(new_data_poly) 
    st.success( 
    f"Predicted Electric Bill: ₹{predicted_bill[0]:.2f}" )
