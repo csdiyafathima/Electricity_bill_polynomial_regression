@@ -26,7 +26,7 @@ if st.button("Predict Electric Bill"):
   elif fan_units <20:
       st.error("❌ Fan Units must be 20 or above.")
   elif fan_units >120:
-      st.error("❌ Fan Units must not be greater than 120.)
+      st.error("❌ Fan Units must not be greater than 120.")
   else:
    new_data = pd.DataFrame({ 
      "AC_Units": [ac_units],
