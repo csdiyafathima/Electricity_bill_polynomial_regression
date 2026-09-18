@@ -20,7 +20,7 @@ if st.button("Predict Electric Bill"):
   else:
    new_data = pd.DataFrame({ 
      "AC_Units": [ac_units] })
-      new_data_poly = poly.transform(new_data)
+   new_data_poly = poly.transform(new_data)
       
    predicted_bill = model.predict(new_data) 
    st.success( 
