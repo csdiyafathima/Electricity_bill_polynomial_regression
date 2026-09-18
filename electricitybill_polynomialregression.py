@@ -8,8 +8,6 @@ st.write(
 )
 ac_units = st.number_input(
     " AC (units)",
-    min_value=10.0,
-    max_value=150,
     value=50.0,
     step=1.0
 )
